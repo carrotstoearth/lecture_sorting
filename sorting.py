@@ -44,10 +44,23 @@ def bubble_sort(number_row_2):
     return number_row_2
 
 
+def insertion_sort(number_array):
+    n = len(number_array)
+    for i in range(1, n):
+        key = number_array[i]
+        j = i - 1
+        while j >= 0 and number_array[j] > key:
+            number_array[j + 1] = number_array[j]
+            j = j - 1
+        number_array[j + 1] = key
+    return number_array
+
+
 def main():
     print(read_data("numbers.csv"))
     print(selection_sort([1, 8, 7, 6, 5, 2, 11, 4, 3, 9, 12]))
     print(bubble_sort([1, 8, 7, 6, 5, 2, 11, 4, 3, 9, 12]))
+    print(insertion_sort([1, 8, 7, 6, 5, 2, 11, 4, 3, 9, 12]))
 
 
 if __name__ == '__main__':
